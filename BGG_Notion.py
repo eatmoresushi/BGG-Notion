@@ -5,6 +5,7 @@ import time
 BGG_API = "https://www.boardgamegeek.com/xmlapi2"
 BGG_LINK_BASE = "https://boardgamegeek.com/boardgame/"
 BGG_USERNAME = ""
+NOTION_VERSION = "2021-08-16"
 COLLECTION = "/collection"
 NOTION_SECRET = ""
 DATABASE_ID = ""
@@ -70,7 +71,7 @@ def add_to_notion():
     notion_headers = {
         "Authorization": f"Bearer {NOTION_SECRET}",
         "Content-Type": "application/json",
-        "Notion-Version": "2021-08-16",
+        "Notion-Version": NOTION_VERSION,
     }
 
     for k in ALL_GAMES_COL:
@@ -109,9 +110,9 @@ def main():
     DATABASE_ID = input("Please enter your Notion database ID: ")
     BGG_USERNAME = input("Please enter your BGG username: ")
     BGG_COLLECTION_FILE = input(
-        "Please enter your BGG collection file, enter 'n' to download your collection from BGG: "
+        "Please enter your BGG collection file name including the path, enter 'N' to download your collection from BGG: "
     )
-    if BGG_COLLECTION_FILE == "n":
+    if BGG_COLLECTION_FILE == "N":
         get_collection()
     parse_xml(BGG_COLLECTION_FILE)
     add_to_notion()
