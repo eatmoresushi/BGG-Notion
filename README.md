@@ -10,7 +10,7 @@ Each game is a sub-page in the database, with the name of the game as the sub-pa
 
 ## TODO
 - [x] Download the collections from BGG to a Notion database
-~~ - [ ] Update contens on BGG website when changes are made in the Notion database. ~~ 
+~~- [ ] Update contens on BGG website when changes are made in the Notion database.~~ 
 I could not find a BGG API to update user centents. 
 - [ ] Regularly check my collections on BGG and update the Notion database
 - [ ] Error handlings
